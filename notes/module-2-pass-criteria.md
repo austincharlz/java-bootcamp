@@ -16,3 +16,12 @@ Exercise 5:
 Exercise 6:
 1. Pass
 2. Pass | It is safer because it is in one line and does not require the extra nextLine() anymore.
+Exercise 7:
+1. Pass
+2. Pass | Area of Circle = pi(r^2);
+Exercise 8:
+1. Pass
+2. Pass | The discount is taken by finding what 10% of the total is then subtracting that from the total to get the final price. Or just 90% of the total price. 
+Exercise 9: 
+1. Pass
+2. Pass | It (%-12s) left aligns in a 12-character field. 
