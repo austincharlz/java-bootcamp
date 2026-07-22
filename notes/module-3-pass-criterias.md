@@ -17,3 +17,5 @@
 - Pass | Abstract forces subclasses to implement because it does not have a body/implementation for the methods. Subclasses will have to implement those abstract methods. 
 #### Exercise 5:
 - Pass
+- Pass
+- Pass | Extends are used for abstract classes while implements are used for implementing interfaces.
