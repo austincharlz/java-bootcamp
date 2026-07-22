@@ -19,3 +19,18 @@
 - Pass
 - Pass
 - Pass | Extends are used for abstract classes while implements are used for implementing interfaces.
+#### Exercise 6:
+- Pass
+- Pass
+- Pass | Original method might change because interest rate might change or the output format might change.
+- Pass
+#### Exercise 7:
+- Pass
+- Pass
+- Pass
+- Pass
+#### Exercise 8: 
+- Pass
+- Pass
+- Pass
+- Pass
