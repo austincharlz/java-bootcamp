@@ -133,7 +133,6 @@ public class StudentManager {
         }
 
         System.out.println();
-        return;
     }
 
     // searchStudent() Method
@@ -143,18 +142,26 @@ public class StudentManager {
             return;
         }
 
-        System.out.print("Student ID: ");
-        int id = Integer.parseInt(scanner.nextLine());
-        int index = findStudentIndex(id);                   // Prompt for ID and uses helper function to find index.
+        while (true) {
+            System.out.print("Student ID: ");
 
-        if (index == -1) {
-            System.out.println("Student Not Found.");
-            return;
-        } else {
-            System.out.println();
-            students[index].display();
+            try {
+                int id = Integer.parseInt(scanner.nextLine());
+                int index = findStudentIndex(id);                   // Prompt for ID and uses helper function to find index.
+
+                if (index == -1) {
+                    System.out.println("Student Not Found.");
+                    return;
+                } else {
+                    System.out.println();
+                    students[index].display();
+                    return;
+                }
+
+            } catch (Exception e) {
+                System.out.println("Invalid ID. Try again.");
+            }
         }
-        return;
     }
 
     // calculateAverage() Method
