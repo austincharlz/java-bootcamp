@@ -10,3 +10,7 @@
 - Pass
 - Pass
 - Pass | In Maps, keys must be unique while values can be duplicated. Additionally, they do not specify or guarantee order when entries are stored or returned. 
+#### Exercise 4:
+- Pass
+- Pass
+- Pass | It is not reliable because they are put in buckets in no particular order and are not guaranteed to stay in the order they are in. 

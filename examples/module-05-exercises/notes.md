@@ -5,4 +5,4 @@
 #### Exercise 2 Notes
 - Sets determine duplicate using equals and hashCode. Strings already implement them. Lab 5 must define identity carefully when custom objects are stored in sets. 
 #### Exercise 3 Notes
-- asdf
+- TreeMap keys always iterate in sorted order — that part is guaranteed. HashMap key order is not a contract; it may differ between runs or JDK versions, so never depend on it for display order.
