@@ -15,4 +15,6 @@
 - Pass
 - Pass | Not guaranteed because it pauses based on how the program is operating and using its memory. 
 #### Exercise 5:
-- asd
+- Pass
+- Pass
+- Pass | The log output shows us that we are using ZGC and it much shorter. 

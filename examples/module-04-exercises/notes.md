@@ -17,4 +17,5 @@
 - Command: java -XX:+UseG1GC -Xms16m -Xmx64m -Xlog:gc GcObserve
 - Evidence: The log began with "Using G1" and showed G1 evacuation pauses. The collector flag selects G1; it does not guarantee a particular pause time.
 #### Exercise 05 Notes
-- asd
+- Command: java -XX:+UseZGC -Xms16m -Xmx64m -Xlog:gc GcObserve
+- Evidence: The log begins with "Using The Z Garbage Collector" instead of "Using G1". Pause-related log lines are different as ZGC does a lot of its work concurrently. This means it does not have the same STW (Stop-The-World) "Evacuation Pause" as G1 does. 
