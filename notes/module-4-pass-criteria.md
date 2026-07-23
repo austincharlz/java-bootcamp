@@ -23,3 +23,7 @@
 - Pass
 - Pass | It cannot free them because there are strong references still pointing to it. 
 - Pass | Clear or remove entries, bound the cache with minimums/maximum. 
+#### Exercise 7:
+- Pass
+- Pass
+- Pass | Immutable is when a String object is created in Java and you cannot change it ever. Temporary allocation creates objects for a short time. 
