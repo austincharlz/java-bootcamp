@@ -1,0 +1,8 @@
+#### Exercise 1 Notes
+- After adds:  [Java Fundamentals, Clean Code, Effective Java, Java Fundamentals]
+- After set:   [Java Fundamentals, Clean Architecture, Effective Java, Java Fundamentals]
+- After remove:[Clean Architecture, Effective Java, Java Fundamentals]
+#### Exercise 2 Notes
+- Sets determine duplicate using equals and hashCode. Strings already implement them. Lab 5 must define identity carefully when custom objects are stored in sets. 
+#### Exercise 3 Notes
+- asdf
