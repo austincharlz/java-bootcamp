@@ -17,4 +17,9 @@
 #### Exercise 5:
 - Pass
 - Pass
-- Pass | The log output shows us that we are using ZGC and it much shorter. 
+- Pass | The log output shows us that we are using ZGC, and it is much shorter. 
+#### Exercise 6:
+- Pass
+- Pass
+- Pass | It cannot free them because there are strong references still pointing to it. 
+- Pass | Clear or remove entries, bound the cache with minimums/maximum. 
