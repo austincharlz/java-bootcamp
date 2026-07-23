@@ -10,3 +10,11 @@
 - It becomes GC-eligible only when no live strong-reference path can reach it.
 - Eligibility does not guarantee immediate collection, and System.gc() is only a request. 
 #### Exercise 03 Notes
+- My program allocated just above 250 MB over the time despite having a 64 MB max for the heap.
+- GC log entries appeared between the rounds that showed a before and after value, the latter usually being lower because of GC.
+- Exact pause times varies from machine to machine
+#### Exercise 04 Notes
+- Command: java -XX:+UseG1GC -Xms16m -Xmx64m -Xlog:gc GcObserve
+- Evidence: The log began with "Using G1" and showed G1 evacuation pauses. The collector flag selects G1; it does not guarantee a particular pause time.
+#### Exercise 05 Notes
+- asd
