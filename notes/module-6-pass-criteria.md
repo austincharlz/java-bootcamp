@@ -18,3 +18,13 @@
 - Pass
 - Pass
 - Pass | Optional exists kind of like a placeholder because an empty source has no highest or lowest. 
+#### Exercise 5
+- Pass
+- Pass
+- Pass
+- Pass | Because it does not mutate the source object, it transforms the values. 
+#### Exercise 6
+- Pass
+- Pass
+- Pass
+- Pass | Grouping key determines how stream elements are grouped, while downstream collector specifies what result is produced for each group. 
