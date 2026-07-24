@@ -33,3 +33,8 @@
 - Pass
 - Pass
 - Pass
+#### Exercise 8
+- Pass
+- Pass
+- Pass
+- Pass | Shared mutable counter lose updates under concurrent workers. You should build-in count().

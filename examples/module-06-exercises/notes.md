@@ -12,3 +12,5 @@
 -  map:    Stream<Employee> -> Stream<String>
 -  sorted: Stream<String>   -> Stream<String>
 -  toList: Stream<String>   -> List<String>
+#### Exercise 8 Notes
+- Shared mutable counter lose updates under concurrent workers. You should build-in count().
