@@ -1,0 +1,37 @@
+[0.007s][info][gc] Using G1
+===== Garbage Collection Demonstration =====
+
+===== JVM Memory Report: Before Allocation =====
+Total Memory : 16 MB
+Free Memory  : 14 MB
+Used Memory  : 1 MB
+Max Memory   : 64 MB
+-----------------------------
+Creating Objects...
+[0.072s][info][gc] GC(0) Pause Young (Normal) (G1 Evacuation Pause) 8M->6M(16M) 4.506ms
+[0.075s][info][gc] GC(1) Pause Young (Normal) (G1 Evacuation Pause) 8M->9M(16M) 1.717ms
+[0.076s][info][gc] GC(2) Pause Young (Concurrent Start) (G1 Evacuation Pause) 10M->10M(16M) 1.047ms
+[0.077s][info][gc] GC(3) Concurrent Mark Cycle
+[0.078s][info][gc] GC(4) Pause Young (Normal) (G1 Evacuation Pause) 12M->12M(16M) 0.988ms
+[0.081s][info][gc] GC(5) Pause Young (Normal) (G1 Evacuation Pause) 14M->15M(37M) 1.470ms
+[0.082s][info][gc] GC(3) Pause Remark 15M->15M(37M) 0.339ms
+[0.083s][info][gc] GC(3) Pause Cleanup 16M->16M(37M) 0.037ms
+[0.084s][info][gc] GC(3) Concurrent Mark Cycle 7.030ms
+[0.088s][info][gc] GC(6) Pause Young (Prepare Mixed) (G1 Evacuation Pause) 21M->21M(37M) 2.487ms
+Objects Created: 100000
+
+===== JVM Memory Report: After Allocation =====
+Total Memory : 37 MB
+Free Memory  : 12 MB
+Used Memory  : 24 MB
+Max Memory   : 64 MB
+-----------------------------
+[0.092s][info][gc] GC(7) Pause Full (System.gc()) 24M->0M(16M) 1.941ms
+
+===== JVM Memory Report: After GC =====
+Total Memory : 16 MB
+Free Memory  : 15 MB
+Used Memory  : 0 MB
+Max Memory   : 64 MB
+-----------------------------
+Elapsed Time: 59 ms

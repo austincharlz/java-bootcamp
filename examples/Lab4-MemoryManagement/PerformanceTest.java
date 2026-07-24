@@ -32,27 +32,73 @@ public class PerformanceTest {
 
     private static void runAllocationTest(int count) {
         MemoryMonitor.triggerGarbageCollection();
+
         long memoryBefore = MemoryMonitor.getUsedMemoryBytes();
         long start = System.nanoTime();
 
-        // TODO: allocate SampleObject[count], fill each slot
-        // TODO: measure elapsed ms + memoryUsed; printf row; null array + GC
-        throw new UnsupportedOperationException("TODO");
+        // Allocate and fill array
+        SampleObject[] objects = new SampleObject[count];
+
+        for (int i = 0; i < count; i++) {
+            objects[i] = new SampleObject(i);
+        }
+
+        long elapsedMillis = (System.nanoTime() - start) / 1_000_000;
+        long memoryUsed = MemoryMonitor.getUsedMemoryBytes() - memoryBefore;
+
+        System.out.printf(
+                "%-12d %-14d %-18d%n",
+                count,
+                memoryUsed,
+                elapsedMillis
+        );
+
+        // Remove references and allow GC
+        objects = null;
+        MemoryMonitor.triggerGarbageCollection();
     }
 
     private static void measureLoopExecution() {
-        // TODO: loop 10_000_000 iterations summing i into sum; print elapsed ms
-        throw new UnsupportedOperationException("TODO");
+        long start = System.nanoTime();
+
+        long sum = 0;
+
+        for (int i = 0; i < 10_000_000; i++) {
+            sum += i;
+        }
+
+        long elapsedMillis = (System.nanoTime() - start) / 1_000_000;
+
+        System.out.println("Loop execution time: " + elapsedMillis + " ms");
+        System.out.println("Loop sum: " + sum);
     }
 
     private static void measureArrayAllocation() {
-        // TODO: allocate int[1_000_000], fill with i, print elapsed ms
-        throw new UnsupportedOperationException("TODO");
+        long start = System.nanoTime();
+
+        int[] numbers = new int[1_000_000];
+
+        for (int i = 0; i < numbers.length; i++) {
+            numbers[i] = i;
+        }
+
+        long elapsedMillis = (System.nanoTime() - start) / 1_000_000;
+
+        System.out.println("Array allocation time: " + elapsedMillis + " ms");
     }
 
     private static void measureLargeByteArray() {
         MemoryMonitor.printMemoryReport("Before Large byte[]");
-        // TODO: allocate 10 MB byte[]; print After report; null + GC; print After Releasing
-        throw new UnsupportedOperationException("TODO");
+
+        // Allocate 10 MB byte array
+        byte[] largeArray = new byte[10 * 1024 * 1024];
+
+        MemoryMonitor.printMemoryReport("After Large byte[]");
+
+        // Remove reference and request GC
+        largeArray = null;
+        MemoryMonitor.triggerGarbageCollection();
+
+        MemoryMonitor.printMemoryReport("After Releasing");
     }
 }

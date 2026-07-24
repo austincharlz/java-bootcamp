@@ -37,18 +37,34 @@ public class MemoryLeakDemo {
         int targetCount = 1_000_000;
         int step = 100_000;
 
-        // TODO: add Employee(i, "Employee-" + i) for i=1..targetCount
-        // TODO: every step objects, print count + MemoryMonitor.printMemoryReport
-        throw new UnsupportedOperationException("TODO");
+        for (int i = 1; i <= targetCount; i++) {
+            employees.add(new Employee(i, "Employee-" + i));
+
+            if (i % step == 0) {
+                System.out.println("Employees Added: " + i);
+                MemoryMonitor.printMemoryReport("After " + i + " Employees");
+            }
+        }
     }
 
     private static void demonstrateFix() {
         System.out.println("===== Memory Leak Fix Demonstration =====");
         MemoryMonitor.printMemoryReport("Before Allocation");
 
-        // TODO: create local ArrayList; add 500_000 employees; print After Allocation
-        // TODO: clear list, null it, trigger GC, print After GC
-        throw new UnsupportedOperationException("TODO");
+        List<Employee> employees = new ArrayList<>();
+
+        for (int i = 1; i <= 500_000; i++) {
+            employees.add(new Employee(i, "Employee-" + i));
+        }
+
+        MemoryMonitor.printMemoryReport("After Allocation");
+
+        employees.clear();
+        employees = null;
+
+        System.gc();
+
+        MemoryMonitor.printMemoryReport("After GC");
     }
 
     private static void printUsage() {
