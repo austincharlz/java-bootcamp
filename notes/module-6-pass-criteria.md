@@ -28,3 +28,8 @@
 - Pass
 - Pass
 - Pass | Grouping key determines how stream elements are grouped, while downstream collector specifies what result is produced for each group. 
+#### Exercise 7
+- Pass
+- Pass
+- Pass
+- Pass

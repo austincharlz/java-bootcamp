@@ -7,3 +7,8 @@
    * They would contain lists of the original stream elements.
 3. Why is a `TreeMap` used only for presentation here?
    * The original did not need sorted keys.
+#### Exercise 7 Notes
+-  filter: Stream<Employee> -> Stream<Employee>
+-  map:    Stream<Employee> -> Stream<String>
+-  sorted: Stream<String>   -> Stream<String>
+-  toList: Stream<String>   -> List<String>
