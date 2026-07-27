@@ -7,4 +7,8 @@
 - Pass
 - Pass
 #### Exercise 3
+- Pass
+- Pass
+- Pass
+#### Exercise 4
 - asdf
