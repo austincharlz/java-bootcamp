@@ -11,4 +11,8 @@
 - Pass
 - Pass
 #### Exercise 4
+- Pass
+- Pass
+- Pass
+#### Exercise 5
 - asdf
