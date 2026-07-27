@@ -18,7 +18,7 @@ Remove-Item out -Recurse -Force
 ```
 #### Step 15 Results
 - I used a for loop to add 1000 integers (0-1000) into each List type. ArrayList won most time while LinkedList was always slower.
-#### Success Critera
+#### Success Criteria
 0. Pass
 1. Pass
 2. Pass
