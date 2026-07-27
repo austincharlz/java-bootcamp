@@ -19,4 +19,8 @@
 - Pass
 - Pass
 #### Exercise 6
-- asdf
+- Pass
+- Pass
+- Pass
+#### Exercise 7
+- asd
