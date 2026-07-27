@@ -23,4 +23,11 @@
 - Pass
 - Pass
 #### Exercise 7
-- asd
+- Pass
+- Pass
+- Pass
+#### Exercise 8
+- Pass
+- Pass
+- Pass
+- Pass
