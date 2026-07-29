@@ -14,3 +14,5 @@
 - No production passwords or API keys in source.
 - Prefer CUS-#### for stable customer identities in examples.
 - Stubs may throw UnsupportedOperationException — that is success for Lab 8, not a bug.
+- Never accept, commit, or merge AI-generated code unless at least one developer on the team fully understands how it works, reviews it for correctness, security, and readability, and verifies it with appropriate testing.
+- 
