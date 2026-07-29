@@ -1,14 +1,24 @@
 #### Concepts to Discuss
 1. Difference between a Copilot **inline completion** and a **Copilot Chat** request—when is each better?
+   - Inline completion suggests code as you type and is best for small changes or boilerplate. Copilot Chat is better for asking questions, explaining code, generating larger features, or debugging.
 2. Why prompt specificity (fields, types, rules) changes enterprise Java output quality vs a vague comment?
+   - Specific prompts give Copilot the context it needs to generate more accurate code. Including field names, data types, and business rules reduces mistakes and improves the quality of the output.
 3. What is the “trust boundary” between an AI suggestion and code allowed to touch real customer data?
+   - AI suggestions are untrusted until a human reviews and verifies them. Only reviewed, tested, and approved code should be allowed to access real customer data.
 4. Which business rule protects integrity in `Customer` (fixed `CustomerStatus` enum vs free-text `String`)?
+   - Using a `CustomerStatus` enum limits values to valid options like `ACTIVE` or `PROSPECT`. This prevents invalid or misspelled status values that a free-text `String` could allow.
 5. What happens if Copilot suggests a class/annotation/library not on this project’s classpath?
+   - The code will not compile until the dependency is added. First, verify that the library is approved and needed before adding it to the project.
 6. Why must every accepted suggestion be reviewed line-by-line, not only “does it compile”?
+   - Code can compile but still contain bugs, security issues, or incorrect business logic. Reviewing each line ensures the code is correct and understandable.
 7. What is the risk of pasting real customer data or credentials into Copilot Chat?
+   - Sensitive information could be exposed or stored outside your organization. Always use fake data or placeholders instead of real customer information or credentials.
 8. How does license/provenance risk apply to a multi-line AI block, and what if it looks copied from a known OSS project?
+   - Large AI-generated code blocks may closely match copyrighted open-source code. If it looks copied, rewrite it or verify that its license is compatible with your project before using it.
 9. Why is Copilot **not** a runtime dependency of `customer-service`?
+   - Copilot is only a development tool that helps write code. The application runs without Copilot after the code has been compiled.
 10. How will Lab 11 reuse today’s review discipline when generating tests?
+    - AI-generated tests will be reviewed just like production code. The team will verify that the tests are correct, meaningful, and actually validate the required behavior before accepting them.
 #### Lab Answers
 - lab10-001 — weak vs strong (entity)
   - Date: 07/28/2026
