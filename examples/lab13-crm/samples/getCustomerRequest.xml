@@ -1,0 +1,4 @@
+<cus:getCustomerRequest>
+    <cus:customerId>CUS-1002</cus:customerId>
+    <cus:correlationId>lab-request-001</cus:correlationId>
+</cus:getCustomerRequest>
