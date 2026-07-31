@@ -41,23 +41,23 @@ git status
 - email=not-an-email → IllegalArgumentException with field message
 - correlationId=lab-request-001
 #### Implementation Checkpoints
-Checkpoint A
-- Pass
-- Pass
-- Pass
-Checkpoint B
-- Pass
-- Pass
-- Pass
-- Pass
-Checkpoint C
-- Pass
-- Pass
-- Pass
-Checkpoint D
-- Pass
-- Pass
-- Pass
+- Checkpoint A
+  - Pass
+  - Pass
+  - Pass
+- Checkpoint B
+  - Pass
+  - Pass
+  - Pass
+  - Pass
+- Checkpoint C
+  - Pass
+  - Pass
+  - Pass
+- Checkpoint D
+  - Pass
+  - Pass
+  - Pass
 #### Reflection Questions
 1. Separating the API DTOs from the Customer entity and using a mapper made the implementation more reliable by keeping validation and API data separate from the domain model.
 2. The project compiled, the tests passed with mvn test, and the application successfully created and retrieved customers as response DTOs using the API facade.

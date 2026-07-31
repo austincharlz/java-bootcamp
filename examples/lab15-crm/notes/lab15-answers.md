@@ -1,0 +1,21 @@
+#### Implementation Checkpoints
+- Checkpoint A
+  - Pass
+  - Pass
+  - Pass 
+- Checkpoint B
+  - Pass
+  - Pass
+  - Pass
+- Checkpoint C
+  - Pass
+  - Pass
+  - Pass
+- Checkpoint D
+  - Pass
+  - Pass
+  - Pass
+#### Reflection Questions
+- The decision to separate business rules into CustomerValidator and use a shared CustomerRepository instance for both the validator and service had the biggest impact on correctness. It ensured validation happened before state changes and prevented duplicate or inconsistent data.
+- The implementation was verified by passing CustomerValidatorTest, successfully activating CUS-1002 from PROSPECT to ACTIVE, and rejecting the illegal ACTIVE → PROSPECT transition while keeping CUS-1001 unchanged.
+- The hardest failure to diagnose was wiring mismatches caused by the transition from the old service design to the repository-based architecture. Using the wrong service methods or separate repository instances caused compile errors and validation issues until the dependencies were aligned.
