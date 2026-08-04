@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Customers</title>
+</head>
+<body>
+<form id="customer-form">
+  <label>Customer ID <input id="customerId" data-testid="customer-id"/></label>
+  <label>Full name <input id="fullName" data-testid="full-name"/></label>
+  <label>Status <select id="status" data-testid="status">
+    <option>ACTIVE</option><option>PROSPECT</option>
+  </select></label>
+  <button type="submit" data-testid="submit">Save</button>
+</form>
+<div id="result" data-testid="result"></div>
+
+<script>
+  const form = document.getElementById('customer-form');
+  const result = document.getElementById('result');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    result.textContent = 'Saving...';
+
+    const payload = {
+      customerId: document.getElementById('customerId').value,
+      fullName: document.getElementById('fullName').value,
+      status: document.getElementById('status').value
+    };
+
+    try {
+      const resp = await fetch('/api/customers', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-Correlation-Id': 'lab-request-001'
+        },
+        body: JSON.stringify(payload)
+      });
+
+      if (resp.ok) {
+        const data = await resp.json();
+        result.textContent = `${data.customerId} / ${data.fullName} / ${data.status}`;
+      } else {
+        const err = await resp.json().catch(() => null);
+        const message = err && (err.message || err.error) ? (err.message || err.error) : resp.statusText;
+        result.textContent = `Error ${resp.status}: ${message}`;
+      }
+    } catch (ex) {
+      result.textContent = 'Network error: ' + ex;
+    }
+  });
+</script>
+</body>
+</html>
