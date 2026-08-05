@@ -1,0 +1,4 @@
+#### Reflection Questions
+1. Separating readiness from liveness was the most important design decision because it let the application stop receiving traffic without being treated as crashed. This made the health checks reflect the application's actual state more accurately.
+2. After sending a POST request to create CUS-2101, the crm.customer.create metric increased on the Actuator metrics endpoint. The request also appeared in the application logs with the correlation ID, showing the traffic was tracked.
+3. The hardest issue to diagnose was when the readiness endpoint did not change because the CrmReadinessIndicator was not correctly included in the readiness group. Once the configuration was fixed, readiness and liveness behaved as expected.
