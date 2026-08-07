@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://db.example.internal:5432/crm
+    username: ${DB_USERNAME}
+    # password: ${DB_PASSWORD}  (no default)
+    password: ${DB_PASSWORD}
+northstar:
+  integration:
+    # api-key: ${NORTHSTAR_API_KEY}
+    api-key: ${NORTHSTAR_API_KEY}
