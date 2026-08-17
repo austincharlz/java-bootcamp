@@ -1,0 +1,4 @@
+﻿Topic: crm.customer-events.v1	TopicId: yjtP9C82TCC7x3yQKzLbVg	PartitionCount: 3	ReplicationFactor: 1	Configs: 
+	Topic: crm.customer-events.v1	Partition: 0	Leader: 1	Replicas: 1	Isr: 1	Elr: 	LastKnownElr: 
+	Topic: crm.customer-events.v1	Partition: 1	Leader: 1	Replicas: 1	Isr: 1	Elr: 	LastKnownElr: 
+	Topic: crm.customer-events.v1	Partition: 2	Leader: 1	Replicas: 1	Isr: 1	Elr: 	LastKnownElr: 

@@ -1,0 +1,5 @@
+Experiment: app stopped POST SOAP
+Command: curl POST /ws with requests/get-customer.xml
+
+Output:
+curl: (7) Failed to connect to localhost:8080 after 2248 ms: Could not connect to server

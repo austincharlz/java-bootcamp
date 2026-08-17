@@ -1,0 +1,3 @@
+﻿Partition:1	Offset:0	null	{"eventId":"99999999-0000-0000-0000-000000000001","eventType":"CustomerCreated","eventVersion":1,"occurredAt":"2026-07-13T08:00:00Z","customerId":"CUS-1001","correlationId":"lab-request-001","source":"customer-service","data":{"fullName":"Amina Khan","status":"ACTIVE"}}
+Partition:0	Offset:0	CUS-1001	{"eventType":"CustomerCreated","eventVersion":1,"customerId":"CUS-1001","correlationId":"lab-request-001","data":{"fullName":"Amina Khan","status":"ACTIVE"}}
+Partition:0	Offset:1	CUS-1001	{"eventType":"CustomerStatusChanged","eventVersion":1,"customerId":"CUS-1001","correlationId":"lab-request-001","data":{"status":"ACTIVE"}}

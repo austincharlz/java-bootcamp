@@ -1,0 +1,6 @@
+﻿
+crm.customer-event.v1
+crm.customer-events.v1
+crm.customer-events.v1.dlq
+
+

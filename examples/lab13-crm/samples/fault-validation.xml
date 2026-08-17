@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+    <soapenv:Body>
+        <soapenv:Fault>
+            <faultcode>soapenv:Client</faultcode>
+            <faultstring>Validation error: fullName cannot be null or blank (correlationId=lab-request-001)
+            </faultstring>
+            <detail>
+                <errorCode>VALIDATION_ERROR</errorCode>
+                <fieldName>fullName</fieldName>
+            </detail>
+        </soapenv:Fault>
+    </soapenv:Body>
+</soapenv:Envelope>

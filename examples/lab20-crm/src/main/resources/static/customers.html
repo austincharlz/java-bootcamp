@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width,initial-scale=1" name="viewport"/>
+    <title>Customers</title>
+</head>
+<body>
+<form id="customer-form">
+    <label>Customer ID <input data-testid="customer-id" id="customerId"/></label>
+    <label>Full name <input data-testid="full-name" id="fullName"/></label>
+    <label>Status <select data-testid="status" id="status">
+        <option>ACTIVE</option>
+        <option>PROSPECT</option>
+    </select></label>
+    <button data-testid="submit" type="submit">Save</button>
+</form>
+<div data-testid="result" id="result"></div>
+
+<script>
+    const form = document.getElementById('customer-form');
+    const result = document.getElementById('result');
+
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        result.textContent = 'Saving...';
+
+        const payload = {
+            customerId: document.getElementById('customerId').value,
+            fullName: document.getElementById('fullName').value,
+            status: document.getElementById('status').value
+        };
+
+        try {
+            const resp = await fetch('/api/customers', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-Correlation-Id': 'lab-request-001'
+                },
+                body: JSON.stringify(payload)
+            });
+
+            if (resp.ok) {
+                const data = await resp.json();
+                result.textContent = `${data.customerId} / ${data.fullName} / ${data.status}`;
+            } else {
+                const err = await resp.json().catch(() => null);
+                const message = err && (err.message || err.error) ? (err.message || err.error) : resp.statusText;
+                result.textContent = `Error ${resp.status}: ${message}`;
+            }
+        } catch (ex) {
+            result.textContent = 'Network error: ' + ex;
+        }
+    });
+</script>
+</body>
+</html>

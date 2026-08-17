@@ -1,0 +1,5 @@
+POST /api/customers CUS-1001 -> 201
+POST /api/customers CUS-1002 -> 201
+GET /api/customers/CUS-1001
+{"id":"CUS-1001","name":"Amina Khan","email":"amina.updated@example.com","status":"VIP"}
+GET /api/customers/CUS-MISSING -> 500

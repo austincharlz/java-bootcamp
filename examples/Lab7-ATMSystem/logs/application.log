@@ -1,0 +1,35 @@
+2026-07-27 13:20:36 INFO Login successful for account 1001
+2026-07-27 13:20:45 ERROR Requested 20000.0 Balance 11000.0
+InsufficientFundsException Transaction Failed. Insufficient Account Balance.
+[com.academy.atm.Account.withdraw(Account.java:50), com.academy.atm.ATMService.lambda$withdraw$1(ATMService.java:88), com.academy.atm.ATMService.executeTransaction(ATMService.java:190), com.academy.atm.ATMService.withdraw(ATMService.java:85), com.academy.atm.Main.main(Main.java:34)]
+2026-07-27 13:21:01 ERROR Amount must be greater than zero.
+InvalidAmountException Amount must be greater than zero.
+[com.academy.atm.Account.deposit(Account.java:39), com.academy.atm.ATMService.lambda$deposit$0(ATMService.java:77), com.academy.atm.ATMService.executeTransaction(ATMService.java:190), com.academy.atm.ATMService.deposit(ATMService.java:74), com.academy.atm.Main.main(Main.java:33)]
+2026-07-27 13:21:09 INFO Deposit completed successfully | Execution Time: 2348 ms
+2026-07-27 13:21:17 INFO Balance Inquiry completed successfully | Execution Time: 0 ms
+2026-07-27 13:21:31 ERROR Invalid numeric input during Deposit
+InputMismatchException Invalid numeric input.
+[com.academy.atm.ATMService.readAmount(ATMService.java:259), com.academy.atm.ATMService.lambda$deposit$0(ATMService.java:76), com.academy.atm.ATMService.executeTransaction(ATMService.java:190), com.academy.atm.ATMService.deposit(ATMService.java:74), com.academy.atm.Main.main(Main.java:33)]
+2026-07-27 13:21:36 INFO Mini Statement completed successfully | Execution Time: 2 ms
+2026-07-27 13:23:37 ERROR Invalid PIN entered.
+InvalidPinException Invalid PIN entered.
+[com.academy.atm.ATMService.login(ATMService.java:53), com.academy.atm.Main.main(Main.java:32)]
+2026-07-27 13:23:44 ERROR Invalid PIN entered.
+InvalidPinException Invalid PIN entered.
+[com.academy.atm.ATMService.login(ATMService.java:53), com.academy.atm.Main.main(Main.java:32)]
+2026-07-27 13:23:52 ERROR Invalid PIN entered.
+InvalidPinException Invalid PIN entered.
+[com.academy.atm.ATMService.login(ATMService.java:53), com.academy.atm.Main.main(Main.java:32)]
+2026-07-27 13:27:55 INFO Login successful for account 1001
+2026-07-27 13:28:01 ERROR Requested 20000.0 Balance 11000.0
+InsufficientFundsException Transaction Failed. Insufficient Account Balance.
+[com.academy.atm.Account.withdraw(Account.java:50), com.academy.atm.ATMService.lambda$withdraw$1(ATMService.java:88), com.academy.atm.ATMService.executeTransaction(ATMService.java:190), com.academy.atm.ATMService.withdraw(ATMService.java:85), com.academy.atm.Main.main(Main.java:34)]
+2026-07-27 13:28:06 ERROR Amount must be greater than zero.
+InvalidAmountException Amount must be greater than zero.
+[com.academy.atm.Account.deposit(Account.java:39), com.academy.atm.ATMService.lambda$deposit$0(ATMService.java:77), com.academy.atm.ATMService.executeTransaction(ATMService.java:190), com.academy.atm.ATMService.deposit(ATMService.java:74), com.academy.atm.Main.main(Main.java:33)]
+2026-07-27 13:28:09 INFO Deposit completed successfully | Execution Time: 1491 ms
+2026-07-27 13:28:14 ERROR Invalid numeric input during Deposit
+InputMismatchException Invalid numeric input.
+[com.academy.atm.ATMService.readAmount(ATMService.java:259), com.academy.atm.ATMService.lambda$deposit$0(ATMService.java:76), com.academy.atm.ATMService.executeTransaction(ATMService.java:190), com.academy.atm.ATMService.deposit(ATMService.java:74), com.academy.atm.Main.main(Main.java:33)]
+2026-07-27 13:28:19 INFO Mini Statement completed successfully | Execution Time: 2 ms
+2026-07-27 14:45:18 INFO Invalid menu selection: 77

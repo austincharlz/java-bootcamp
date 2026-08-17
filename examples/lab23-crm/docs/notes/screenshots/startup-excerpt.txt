@@ -1,0 +1,4 @@
+2026-08-06T15:00:29.997-04:00  INFO 29104 --- [crm] [           main] com.northstar.crm.CrmApplication         : Starting CrmApplication using Java 21.0.11
+2026-08-06T15:00:30.809-04:00  INFO 29104 --- [crm] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-08-06T15:00:31.286-04:00  INFO 29104 --- [crm] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2026-08-06T15:00:31.295-04:00  INFO 29104 --- [crm] [           main] com.northstar.crm.CrmApplication         : Started CrmApplication in 1.604 seconds (process running for 1.828)

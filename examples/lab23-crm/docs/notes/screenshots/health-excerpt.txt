@@ -1,0 +1,5 @@
+GET http://localhost:8080/actuator/health
+{"status":"UP"}
+
+GET http://localhost:8080/actuator/info
+{"app":{"name":"Northstar CRM","description":"First Boot app for Lab 23 with customer and actuator endpoints."}}

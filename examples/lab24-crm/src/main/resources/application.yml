@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: northstar-crm
+info:
+  app:
+    name: Northstar CRM
+    description: First Boot app for Lab 23 with customer and actuator endpoints.
+
+server:
+  port: 8080
+
+management:
+  info:
+    env:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      show-details: when_authorized
+
+logging:
+  level:
+    com.northstar.crm: INFO

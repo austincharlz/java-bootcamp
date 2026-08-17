@@ -1,0 +1,14 @@
+package com.northstar.crm.service;
+
+import com.northstar.crm.entity.Customer;
+import com.northstar.crm.entity.CustomerStatus;
+import java.util.List;
+import java.util.Optional;
+
+public interface ICustomerService {
+    Customer addCustomer(Customer customer);
+    Customer addCustomer(Customer customer, String correlationId);
+    Optional<Customer> findById(String customerId);
+    List<Customer> listAll();
+    Customer changeStatus(String customerId, CustomerStatus newStatus, String correlationId);
+}

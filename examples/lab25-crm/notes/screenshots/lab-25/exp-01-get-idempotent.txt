@@ -1,0 +1,11 @@
+﻿## Step 9 Failure Experiments — Lab 25 CRM
+
+### Experiment 1: Repeat GET CUS-1001 (Idempotent)
+Expected: 200 OK, same response both times
+
+First GET:
+{"id":"CUS-1001","name":"Amina Khan","email":"amina.khan@example.com","status":"ACTIVE"}
+
+Second GET (same):
+{"id":"CUS-1001","name":"Amina Khan","email":"amina.khan@example.com","status":"ACTIVE"}
+Result: Both responses identical (idempotent GET)

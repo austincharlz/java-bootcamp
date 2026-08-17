@@ -1,0 +1,6 @@
+﻿## Experiment 3: GET Not-Found (CUS-9999)
+Expected: Error with "not found" message
+
+GET CUS-9999:
+{"timestamp":"2026-08-07T16:30:45.560+00:00","status":500,"error":"Internal Server Error","path":"/api/customers/CUS-9999"}
+Result: Service throws IllegalArgumentException (customer not found)

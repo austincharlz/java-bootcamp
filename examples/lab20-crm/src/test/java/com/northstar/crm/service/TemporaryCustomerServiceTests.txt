@@ -1,0 +1,78 @@
+package com.northstar.crm.service;
+
+import com.northstar.crm.entity.Customer;
+import com.northstar.crm.entity.CustomerStatus;
+import com.northstar.crm.exception.BusinessException;
+import com.northstar.crm.repository.InMemoryCustomerRepository;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import java.time.LocalDateTime;
+import java.util.List;
+import java.util.stream.Collectors;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+/**
+ * Temporary tests covering duplicate-email, listAll, and BusinessException correlation.
+ * - Uses fixed fixture IDs: CUS-1001 / CUS-1002
+ * - No Spring or JPA imports (in-memory repository only)
+ * - Independent @BeforeEach setup
+ */
+class TemporaryCustomerServiceTests {
+
+    DefaultCustomerService service;
+
+    @BeforeEach
+    void setUp() {
+        InMemoryCustomerRepository repository = new InMemoryCustomerRepository();
+        CustomerValidator validator = new CustomerValidator(repository);
+        service = new DefaultCustomerService(repository, validator);
+    }
+
+    private Customer createFixture(String id, String fullName, String email, CustomerStatus status) {
+        LocalDateTime now = LocalDateTime.now();
+        return new Customer(id, fullName, email, "555-0000", status, now, now);
+    }
+
+    @Test
+    void duplicateEmailThrowsIllegalState() {
+        // fixtures
+        Customer a = createFixture("CUS-1001", "Amina Khan", "shared@example.com", CustomerStatus.ACTIVE);
+        Customer b = createFixture("CUS-1002", "Ravi Singh", "shared@example.com", CustomerStatus.PROSPECT);
+
+        service.addCustomer(a);
+
+        IllegalStateException ex = assertThrows(IllegalStateException.class, () -> service.addCustomer(b));
+        assertTrue(ex.getMessage().toLowerCase().contains("duplicate email"), "expected duplicate email message");
+    }
+
+    @Test
+    void listAllReturnsAllFixtures() {
+        Customer a = createFixture("CUS-1001", "Amina Khan", "amina@example.com", CustomerStatus.ACTIVE);
+        Customer b = createFixture("CUS-1002", "Ravi Singh", "ravi@example.com", CustomerStatus.PROSPECT);
+
+        service.addCustomer(a);
+        service.addCustomer(b);
+
+        List<Customer> all = service.listAll();
+        assertEquals(2, all.size(), "expected two customers in listAll");
+
+        List<String> ids = all.stream().map(Customer::getCustomerId).collect(Collectors.toList());
+        assertTrue(ids.contains("CUS-1001"), "listAll should contain CUS-1001");
+        assertTrue(ids.contains("CUS-1002"), "listAll should contain CUS-1002");
+    }
+
+    @Test
+    void notFoundChangeStatusIncludesCorrelation() {
+        String correlation = "corr-12345";
+
+        BusinessException ex = assertThrows(BusinessException.class, () ->
+                service.changeStatus("CUS-9999", CustomerStatus.ACTIVE, correlation)
+        );
+
+        assertEquals("CUSTOMER_NOT_FOUND", ex.getCode());
+        assertEquals(correlation, ex.getCorrelationId());
+        assertTrue(ex.getMessage().contains("CUS-9999"), "message should mention missing id");
+    }
+}

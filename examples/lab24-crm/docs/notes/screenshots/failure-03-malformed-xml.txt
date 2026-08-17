@@ -1,0 +1,5 @@
+Experiment: malformed SOAP XML
+Request: truncated GetCustomerRequest envelope
+
+Output:
+HTTP/1.1 400  Content-Length: 0 Date: Thu, 06 Aug 2026 21:05:32 GMT Connection: close 

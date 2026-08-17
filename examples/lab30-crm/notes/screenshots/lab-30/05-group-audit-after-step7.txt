@@ -1,0 +1,5 @@
+﻿
+GROUP           TOPIC                  PARTITION  CURRENT-OFFSET  LOG-END-OFFSET  LAG             CONSUMER-ID     HOST            CLIENT-ID
+crm-audit       crm.customer-events.v1 1          0               0               0               -               -               -
+crm-audit       crm.customer-events.v1 2          0               0               0               -               -               -
+crm-audit       crm.customer-events.v1 0          11              11              0               -               -               -

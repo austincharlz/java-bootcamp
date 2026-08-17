@@ -1,0 +1,2 @@
+﻿NAME        IMAGE                COMMAND                  SERVICE   CREATED          STATUS          PORTS
+crm-kafka   apache/kafka:3.9.1   "/__cacert_entrypoin…"   kafka     24 minutes ago   Up 24 minutes   0.0.0.0:9092->9092/tcp, [::]:9092->9092/tcp

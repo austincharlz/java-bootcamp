@@ -1,0 +1,143 @@
+.app-layout {
+    min-height: 100svh;
+    display: grid;
+    grid-template-rows: auto 1fr;
+}
+
+.app-header {
+    border-bottom: 1px solid var(--border);
+    padding: 1.25rem 1rem;
+}
+
+.app-header h1 {
+    margin: 0;
+}
+
+.app-main {
+    display: grid;
+    gap: 1.5rem;
+    padding: 1.5rem 1rem 2rem;
+}
+
+.customer-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.customer-toolbar h2 {
+    margin: 0;
+}
+
+.customer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1rem;
+}
+
+.customer-card {
+    display: grid;
+    gap: 0.75rem;
+    border: 1px solid var(--border);
+    border-radius: 0.75rem;
+    padding: 1rem;
+    text-align: left;
+}
+
+.customer-card h2 {
+    margin: 0;
+    font-size: 1.25rem;
+}
+
+.customer-id {
+    margin: 0;
+    font-family: var(--mono);
+    font-size: 0.9rem;
+}
+
+.status {
+    display: inline-block;
+    width: fit-content;
+    border: 1px solid currentColor;
+    border-radius: 999px;
+    padding: 0.2rem 0.6rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.status--active {
+    color: #05603a;
+}
+
+.status--prospect {
+    color: #8a5b00;
+}
+
+.status--closed {
+    color: #6a1b9a;
+}
+
+.empty-state,
+.loading-state,
+.error-state,
+.customer-form-shell {
+    border: 1px solid var(--border);
+    border-radius: 0.75rem;
+    padding: 1rem;
+    text-align: left;
+}
+
+.customer-form {
+    display: grid;
+    gap: 1rem;
+}
+
+.form-field {
+    display: grid;
+    gap: 0.4rem;
+}
+
+.form-field input,
+.form-field select,
+.customer-toolbar button,
+.customer-card button,
+.customer-form button,
+.error-state button {
+    font: inherit;
+}
+
+.form-field input,
+.form-field select {
+    border: 1px solid var(--border);
+    border-radius: 0.5rem;
+    padding: 0.5rem 0.65rem;
+    background: var(--bg);
+    color: var(--text-h);
+}
+
+.field-error {
+    color: #b91c1c;
+    margin: 0;
+}
+
+.form-actions {
+    display: flex;
+    gap: 0.75rem;
+}
+
+button {
+    border: 1px solid var(--border);
+    border-radius: 0.5rem;
+    padding: 0.45rem 0.75rem;
+    background: var(--bg);
+    color: var(--text-h);
+    cursor: pointer;
+}
+
+@media (max-width: 600px) {
+    .customer-toolbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

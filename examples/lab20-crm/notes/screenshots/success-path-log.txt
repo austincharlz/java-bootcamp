@@ -1,0 +1,36 @@
+# Lab 20 — Successful-path log evidence
+# Captured: 2026-08-05
+# App: Northstar CRM (lab20-crm)
+# Correlation: lab-request-001
+# Customers: CUS-1001 (ACTIVE), CUS-1002 (PROSPECT)
+#
+# PII check: fullName / email / phone are NOT present in any log line below.
+
+--- Application startup ---
+2026-08-05 15:23:25,343 INFO  [main] com.northstar.crm.Application corr= cust= op= - Starting Application using Java 21.0.11
+2026-08-05 15:23:26,354 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer corr= cust= op= - Tomcat started on port 8080 (http) with context path '/'
+2026-08-05 15:23:26,358 INFO  [main] com.northstar.crm.Application corr= cust= op= - Started Application in 1.371 seconds
+
+--- POST /api/customers  (CUS-1001, ACTIVE) → 201 Created ---
+REQUEST:  POST /api/customers  X-Correlation-Id: lab-request-001
+RESPONSE: 201 Created          X-Correlation-Id: lab-request-001
+LOG:
+2026-08-05 15:23:50,696 INFO  [http-nio-8080-exec-1] c.n.c.service.DefaultCustomerService corr=lab-request-001 cust=CUS-1001 op=create - create customer id=CUS-1001
+
+--- GET /api/customers/CUS-1001 → 200 OK ---
+REQUEST:  GET /api/customers/CUS-1001  X-Correlation-Id: lab-request-001
+RESPONSE: 200 OK               X-Correlation-Id: lab-request-001
+LOG:
+2026-08-05 15:23:50,751 INFO  [http-nio-8080-exec-4] c.n.c.service.DefaultCustomerService corr=lab-request-001 cust=CUS-1001 op=get - get customer id=CUS-1001
+
+--- POST /api/customers  (CUS-1002, PROSPECT) → 201 Created ---
+REQUEST:  POST /api/customers  X-Correlation-Id: lab-request-001
+RESPONSE: 201 Created          X-Correlation-Id: lab-request-001
+LOG:
+2026-08-05 15:23:50,789 INFO  [http-nio-8080-exec-3] c.n.c.service.DefaultCustomerService corr=lab-request-001 cust=CUS-1002 op=create - create customer id=CUS-1002
+
+--- GET /api/customers/CUS-1002 → 200 OK ---
+REQUEST:  GET /api/customers/CUS-1002  X-Correlation-Id: lab-request-001
+RESPONSE: 200 OK               X-Correlation-Id: lab-request-001
+LOG:
+2026-08-05 15:23:50,814 INFO  [http-nio-8080-exec-2] c.n.c.service.DefaultCustomerService corr=lab-request-001 cust=CUS-1002 op=get - get customer id=CUS-1002

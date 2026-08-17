@@ -1,0 +1,24 @@
+# Lab 20 — Controlled-failure log evidence
+# Captured: 2026-08-05
+# App: Northstar CRM (lab20-crm)
+# Correlation: lab-request-001
+#
+# PII check: fullName / email / phone are NOT present in any log line below.
+
+--- Experiment 1: GET non-existent customer (CUS-9999) → 404 Not Found ---
+REQUEST:  GET /api/customers/CUS-9999  X-Correlation-Id: lab-request-001
+RESPONSE: 404 Not Found         X-Correlation-Id: lab-request-001
+LOG:
+2026-08-05 15:23:50,837 INFO  [http-nio-8080-exec-5] c.n.c.service.DefaultCustomerService corr=lab-request-001 cust=CUS-9999 op=get - get customer id=CUS-9999
+
+--- Experiment 2: POST with blank fullName (CUS-1002) → 400 Bad Request ---
+REQUEST:  POST /api/customers  {"customerId":"CUS-1002","fullName":"","status":"PROSPECT"}  X-Correlation-Id: lab-request-001
+RESPONSE: 400 Bad Request       X-Correlation-Id: lab-request-001
+LOG:
+2026-08-05 15:23:50,866 WARN  [http-nio-8080-exec-7] c.n.crm.api.CustomerController corr=lab-request-001 cust= op= - Rejecting create reason=missing_full_name customerId=CUS-1002
+
+--- Summary ---
+| Experiment            | Expected | Actual | PII-free |
+|-----------------------|----------|--------|----------|
+| GET missing customer  | 404 + INFO log with cust/corr | PASS | YES |
+| POST blank fullName   | 400 + WARN reason code        | PASS | YES |

@@ -1,0 +1,16 @@
+1. Health while app stopped
+   - curl exit code: 7
+   - Observation: service unavailable until the app starts.
+
+2. Create CUS-1001 twice
+   - First POST: 201
+   - Second POST: 201
+   - Observation: the in-memory map overwrote the existing entry.
+
+3. Missing customer lookup
+   - GET /api/customers/CUS-MISSING -> 500
+   - Observation: timed path uses Boot's default handling for IllegalArgumentException.
+
+4. Port already in use
+   - Second app startup failed with "APPLICATION FAILED TO START"
+   - Observation: Boot reported that port 8080 was already in use.

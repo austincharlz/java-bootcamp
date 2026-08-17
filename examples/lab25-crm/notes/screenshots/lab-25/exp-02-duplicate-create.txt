@@ -1,0 +1,9 @@
+﻿## Experiment 2: Repeat POST create same ID (Duplicate Rejection)
+Expected: First succeeds (201), second fails (500 or 4xx) with duplicate error
+
+First POST CUS-1004:
+{"id":"CUS-1004","name":"Test","email":"test@example.com","status":"PROSPECT"}
+
+Second POST same ID (should fail):
+{"timestamp":"2026-08-07T16:30:45.007+00:00","status":500,"error":"Internal Server Error","path":"/api/customers"}
+Result: First succeeds (201 CREATED), second fails (service rejects duplicate)

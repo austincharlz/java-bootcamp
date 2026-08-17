@@ -1,0 +1,2 @@
+﻿Topic: crm.customer-events.v1.dlq	TopicId: FTuTweriQFSr3uO-VwSBXg	PartitionCount: 1	ReplicationFactor: 1	Configs: 
+	Topic: crm.customer-events.v1.dlq	Partition: 0	Leader: 1	Replicas: 1	Isr: 1	Elr: 	LastKnownElr: 
