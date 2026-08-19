@@ -58,7 +58,7 @@ Failed to load driver class org.postgresql.Driver
 git status --short
 ```
 
-**Result:** No `.env` file listed. Only `.env.example` committed with safe placeholders:
+**Result:** No `.env` file listed. Only `.env` committed with safe placeholders:
 ```
 DB_USERNAME=crm
 DB_PASSWORD=change-me

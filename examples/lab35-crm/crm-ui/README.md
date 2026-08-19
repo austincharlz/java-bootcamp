@@ -7,7 +7,7 @@
 
 ## Setup
 
-1. Copy `.env.example` to `.env`.
+1. Copy `.env` to `.env`.
 2. Start the UI:
 
 ```bash

@@ -81,7 +81,7 @@ Failed to load driver class org.postgresql.Driver
 
 ### Experiment 2: Secrets Not in Git
 - `.env` is in `.gitignore` ✅
-- `.env.example` contains only placeholders (never real values) ✅
+- `.env` contains only placeholders (never real values) ✅
 - `application-prod.yml` uses `${DB_PASSWORD}` and `${NORTHSTAR_API_KEY}` placeholders ✅
 - No credentials ever committed to repository ✅
 
@@ -89,4 +89,5 @@ Failed to load driver class org.postgresql.Driver
 ```bash
 git status --short
 ```
-No `.env` or real password files staged for commit. Only `.env.example` with placeholders committed.
+
+No `.env` or real password files staged for commit. Only `.env` with placeholders committed.

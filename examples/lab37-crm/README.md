@@ -41,5 +41,5 @@ database/01_create_user.sql
 ## Notes
 
 - `.env` is local-only and intentionally ignored by Git.
-- `.env.example` is the tracked template.
+- `.env` is the tracked template.
 - The `05_drop.sql` cleanup script drops child tables before parent tables to avoid foreign-key dependency failures.
