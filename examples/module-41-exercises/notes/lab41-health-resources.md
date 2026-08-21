@@ -6,7 +6,7 @@ Name the Actuator readiness path you expect (e.g. `/actuator/health/readiness`) 
 
 ## Step 2 — Check the reference
 
-Readiness fails closed if DB is down—agents should not get half-ready CRM.
+Readiness fails closed if DB is down, agents should not get half-ready CRM.
 
 ## Step 3 — Resources
 
