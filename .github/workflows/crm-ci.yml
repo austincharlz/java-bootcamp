@@ -5,7 +5,7 @@ name: CRM CI
 on:
   pull_request:
   push:
-    branches: [ main ]
+    branches: [ main, master ]
     tags: [ "v*" ]
 
 defaults:
