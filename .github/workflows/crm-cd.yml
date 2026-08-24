@@ -18,8 +18,8 @@ on:
         description: "Hex SHA-256 from Lab 43 SHA256SUMS (do not rebuild)"
         required: true
 
-# TODO(lab44): Settings → Environments — required reviewers for production
-# Secrets only via GitHub Environments — never hardcode tokens or kubeconfig
+# Production requires reviewers configured in Settings → Environments.
+# Secrets only via GitHub Environments — never hardcode tokens or kubeconfig.
 
 jobs:
   promote:

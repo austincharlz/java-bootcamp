@@ -1,28 +1,28 @@
 {
   "application": "crm-api",
-  "version": "TODO(lab44)-semver",
-  "gitCommit": "TODO(lab44)-GITHUB_SHA-from-Lab-43-SHA256SUMS",
-  "jarSha256": "TODO(lab44)-hex-from-Lab-43-SHA256SUMS",
+  "version": "1.4.0-lab44",
+  "gitCommit": "8a5a9684301f7c210f085d07c2038f9098ec36d8",
+  "jarSha256": "314c1350fdb567954c816ce714c72640d18ddc495859de3314b91566dd095d2b",
   "imageRepository": null,
   "imageDigest": null,
-  "lab42ImageId": "TODO(lab44)-optional-docker-inspect-Id-or-null",
+  "lab42ImageId": null,
   "builtBy": "lab43-ci",
   "knownGoodPrevious": {
-    "jarSha256": "TODO(lab44)-record-BEFORE-this-promote",
-    "version": "TODO(lab44)-prior"
+    "jarSha256": "314c1350fdb567954c816ce714c72640d18ddc495859de3314b91566dd095d2b",
+    "version": "1.4.0-lab44"
   },
   "environments": {
     "test": {
       "promoted": false,
-      "smoke": "TODO(lab44): Lab 43 verify green"
+      "smoke": "Lab 43 verify green; artifact matches SHA256SUMS from the prior package run"
     },
     "staging": {
       "promoted": false,
-      "smoke": "TODO(lab44): GET /api/customers?status=ACTIVE + lab-request-001"
+      "smoke": "GET /api/customers?status=ACTIVE + X-Correlation-Id: lab-request-001"
     },
     "production": {
       "promoted": false,
-      "approval": "TODO(lab44)"
+      "approval": "Required reviewer approval in GitHub Environment before deploy"
     }
   },
   "notes": "Never put passwords, tokens, or kubeconfig here. imageDigest stays null unless you actually pushed a registry image. Do not invent ghcr.io/@sha256."
