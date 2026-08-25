@@ -1,0 +1,45 @@
+---
+# Lab 45 — Ansible site sketch (idempotent config for CRM host)
+# This playbook is intentionally limited to a non-prod baseline. No database
+# credentials or vault passwords are stored in source control.
+
+- name: Northstar CRM host baseline
+  hosts: crm
+  become: true
+  gather_facts: true
+  vars:
+    crm_user: crm
+    crm_group: crm
+    crm_app_dir: /opt/northstar-crm
+    crm_packages:
+      - curl
+      - unzip
+
+  tasks:
+    - name: Ensure crm group exists
+      ansible.builtin.group:
+        name: "{{ crm_group }}"
+        state: present
+
+    - name: Ensure crm user exists
+      ansible.builtin.user:
+        name: "{{ crm_user }}"
+        group: "{{ crm_group }}"
+        state: present
+        create_home: true
+        shell: /bin/bash
+
+    - name: Ensure application directory exists
+      ansible.builtin.file:
+        path: "{{ crm_app_dir }}"
+        state: directory
+        owner: "{{ crm_user }}"
+        group: "{{ crm_group }}"
+        mode: "0755"
+
+    - name: Install baseline packages
+      ansible.builtin.package:
+        name: "{{ item }}"
+        state: present
+      loop: "{{ crm_packages }}"
+      when: ansible_os_family in ['RedHat', 'Debian']

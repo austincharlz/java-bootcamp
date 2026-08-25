@@ -1,0 +1,13 @@
+# Example inventory — replace hosts; never commit production IPs or secrets.
+all:
+  children:
+    crm:
+      hosts:
+        crm-dev-01:
+          ansible_host: 127.0.0.1
+          ansible_user: crm
+          ansible_become: true
+          ansible_become_method: sudo
+      vars:
+        environment: dev
+        app_name: northstar-crm

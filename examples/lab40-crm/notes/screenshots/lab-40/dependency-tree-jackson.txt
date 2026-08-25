@@ -1,0 +1,10 @@
+dependency tree excerpt
+
+Command:
+mvn dependency:tree "-Dincludes=com.fasterxml.jackson.core:jackson-databind"
+
+Result:
+com.northstar:lab40-crm:jar:0.0.1-SNAPSHOT
+\- org.springframework.boot:spring-boot-starter-web:jar:3.3.5:compile
+   \- org.springframework.boot:spring-boot-starter-json:jar:3.3.5:compile
+      \- com.fasterxml.jackson.core:jackson-databind:jar:2.17.2:compile

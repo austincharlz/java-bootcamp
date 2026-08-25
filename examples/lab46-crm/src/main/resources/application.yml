@@ -1,0 +1,39 @@
+spring:
+  application:
+    name: lab46-crm
+  kafka:
+    bootstrap-servers: ${SPRING_KAFKA_BOOTSTRAP_SERVERS:localhost:9092}
+    consumer:
+      # Keep the Lab 31 group so lag describe matches the existing consumer.
+      group-id: crm-notifications
+      auto-offset-reset: earliest
+      enable-auto-commit: false
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring.json.trusted.packages: com.northstar.crm.event
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+    listener:
+      ack-mode: record
+      concurrency: 1
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,prometheus,metrics
+  metrics:
+    tags:
+      application: lab46-crm
+
+crm:
+  kafka:
+    # Lab 30/31 names — do not rename to crm.customer.events
+    customer-events-topic: crm.customer-events.v1
+    customer-events-dlt: crm.customer-events.v1.DLT
+
+northstar:
+  security:
+    jwt-secret: ${JWT_SECRET:lab31-dev-secret-change-me}

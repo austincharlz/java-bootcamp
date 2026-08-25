@@ -1,0 +1,10 @@
+dependency-check failure excerpt
+
+Command:
+mvn -B -Psecurity-scan dependency-check:check
+
+Result:
+[ERROR] Error updating the NVD Data
+[ERROR] UpdateException: Error updating the NVD Data
+[ERROR] caused by NvdApiException: Invalid API Key, length of 0 too short to provided a masked partial key
+[ERROR] NoDataException: No documents exist

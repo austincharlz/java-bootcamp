@@ -1,0 +1,3 @@
+mvn -q test -Dtest=CustomerRepositoryIT -> passed
+mvn -q clean verify -> passed
+Postgres: crm_app / change-me against localhost:5432/crm
